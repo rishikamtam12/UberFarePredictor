@@ -6,5 +6,3 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-/secrets/serviceKey.json
-/secrets/serviceKeyExpired.json
