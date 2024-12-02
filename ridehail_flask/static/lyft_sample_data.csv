@@ -1,0 +1,21 @@
+distance,cab_type,time_stamp,destination,source,price,surge_multiplier,id,name
+1.0,Lyft,2018-12-02T10:30,Financial District,Haymarket Square,2.5,1.0,266234,Shared
+1.0,Lyft,2018-12-02T07:00,North End,Financial District,2.5,1.0,358706,Shared
+1.0,Lyft,2018-12-17T02:00,Financial District,Haymarket Square,2.5,1.0,401970,Shared
+1.0,Lyft,2018-11-27T00:00,Financial District,Haymarket Square,2.5,1.0,536179,Shared
+1.0,Lyft,2018-12-16T19:00,North Station,North End,2.5,1.0,572308,Shared
+1.25,Lyft,2018-12-14T09:30,Back Bay,Northeastern University,2.5,1.0,140786,Shared
+1.25,Lyft,2018-12-02T09:00,Theatre District,Haymarket Square,2.5,1.0,259970,Shared
+1.25,Lyft,2018-12-01T20:30,Back Bay,Northeastern University,2.5,1.0,269277,Shared
+1.25,Lyft,2018-11-28T01:00,West End,North End,2.5,1.0,292287,Shared
+1.25,Lyft,2018-12-16T12:00,Theatre District,Haymarket Square,2.5,1.0,410287,Shared
+1.5,Lyft,2018-12-13T07:30,Back Bay,Boston University,2.5,1.0,58025,Shared
+1.5,Lyft,2018-12-03T10:00,Back Bay,Boston University,2.5,1.0,193590,Shared
+1.5,Lyft,2018-12-01T04:30,Back Bay,Boston University,2.5,1.0,258367,Shared
+1.75,Lyft,2018-11-29T10:00,South Station,West End,2.5,1.0,453746,Shared
+1.75,Lyft,2018-12-03T02:30,North Station,South Station,2.5,1.0,458134,Shared
+0.72,Lyft,2018-12-03T09:00,West End,Haymarket Square,2.5,1.0,66818,Shared
+0.72,Lyft,2018-12-15T20:00,West End,Haymarket Square,2.5,1.0,449441,Shared
+0.97,Lyft,2018-12-18T17:00,North Station,North End,2.5,1.0,59159,Shared
+0.97,Lyft,2018-12-18T05:30,North Station,North End,2.5,1.0,312407,Shared
+1.19,Lyft,2018-12-17T09:30,Theatre District,South Station,2.5,1.0,379204,Shared
