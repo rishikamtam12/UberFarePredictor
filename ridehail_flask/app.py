@@ -62,8 +62,16 @@ def view_chart(chart_number):
             'description': 'Visualization 3 - Heatmaps [Weather metrics vs Price]'
         },
         '4': {
-            'images': ['chart4a.png', 'chart4b.png'],
-            'description': 'These charts offer a comparative analysis and visual representation of data distribution.'
+            'images': ['uber_rainy_condition_prices.png', 'lyft_rainy_condition_prices.png'],
+            'description': 'Visualization 4 - Rains influence on price'
+        },
+        '5': {
+            'images': ['uber_hourly_prices.png', 'lyft_hourly_prices.png'],
+            'description': 'Visualization 5 - Hourly pricing'
+        },
+        '6': {
+            'images': ['uber_places_hourly_prices.png', 'lyft_places_hourly_prices.png'],
+            'description': 'Visualization 6 - Hourly pricing against Places'
         }
     }
 
