@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Chart</title>
+    <style>
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .chart-container img {
+            margin: 0 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        .description {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chart View</h1>
+        
+        <!-- Render charts side by side if there are multiple, otherwise single chart -->
+        <div class="chart-container">
+            {% for chart_image in chart_images %}
+                <img src="{{ url_for('static', filename=chart_image) }}" alt="Chart Image">
+            {% endfor %}
+        </div>
+
+        <!-- Display the description -->
+        <div class="description">
+            <p>{{ chart_description }}</p>
+        </div>
+
+        <br><br>
+        <button onclick="location.href='/static-visualizations'">Back to Static Visualizations</button>
+    </div>
+</body>
+</html>

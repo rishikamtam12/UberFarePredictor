@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Data</title>
+    <style>
+        .table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparison Data</h1>
+        
+        <!-- Display the comparison table -->
+        <div>
+            {{ comparision_table|safe }}
+        </div>
+
+        <br><br>
+        <button onclick="location.href='/static-visualizations'">Back to Static Visualizations</button>
+    </div>
+</body>
+</html>

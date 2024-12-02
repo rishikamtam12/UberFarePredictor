@@ -1,0 +1,12 @@
+metric,lyft,uber
+Average Price,17.35,15.8
+Total Trips,307408.0,330568.0
+Minimum Price,2.5,4.5
+Maximum Price,97.5,89.5
+Price Standard Deviation,10.02,8.56
+Median Price,16.5,12.5
+Total Revenue,5333957.98,5221435.0
+Average Surge Multiplier,1.03,1.0
+Surge Multiplier Standard Deviation,0.14,0.0
+Median Surge Multiplier,1.0,1.0
+Average Distance,2.19,2.19
