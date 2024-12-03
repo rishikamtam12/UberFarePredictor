@@ -3,9 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Visualizations</title>
+    <title>Dynamic Visualization</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        table.data {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table.data, table.data th, table.data td {
+            border: 1px solid #ddd;
+        }
+        table.data th, table.data td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Dynamic Visualizations</h1>
+
+<div class="container">
+    <h2>Dynamic Visualization</h2>
+    
+    <!-- Form to select source and destination -->
+    <form method="POST">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="source">Source</label>
+                <select class="form-control" id="source" name="source">
+                    <option value="">Select Source</option>
+                    {% for source in sources %}
+                        <option value="{{ source }}" {% if source == selected_source %} selected {% endif %}>{{ source }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="destination">Destination</label>
+                <select class="form-control" id="destination" name="destination">
+                    <option value="">Select Destination</option>
+                    {% for destination in source_to_dest[selected_source] %}
+                        <option value="{{ destination }}" {% if destination == selected_destination %} selected {% endif %}>{{ destination }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Average Price</button>
+    </form>
+
+    <!-- Display selected source and destination -->
+    {% if selected_source and selected_destination %}
+        <h4>Selected Source: {{ selected_source }}</h4>
+        <h4>Selected Destination: {{ selected_destination }}</h4>
+    {% endif %}
+
+    <!-- JavaScript to update destination options based on source -->
+    <script>
+        $(document).ready(function() {
+            $('#source').change(function() {
+                var selectedSource = $(this).val();
+                var destinations = {{ source_to_dest | tojson }};
+                var destinationSelect = $('#destination');
+                
+                // Clear existing options
+                destinationSelect.empty();
+                destinationSelect.append('<option value="">Select Destination</option>');
+                
+                if (selectedSource) {
+                    // Add corresponding destinations for the selected source
+                    var sourceDestinations = destinations[selectedSource] || [];
+                    sourceDestinations.forEach(function(destination) {
+                        destinationSelect.append('<option value="' + destination + '">' + destination + '</option>');
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Display the combined Uber and Lyft table if data is available -->
+    {% if uber_avg_price_per_hour %}
+        <h3>Uber and Lyft Average Price Per Hour</h3>
+        <div>{{ uber_avg_price_per_hour | safe }}</div>
+    {% endif %}
+
+
+    <!-- Display the table of the data -->
+    {% if df_html %}
+        <div class="table-responsive">
+            {{ df_html | safe }}
+        </div>
+    {% endif %}
+</div>
+
 </body>
 </html>
