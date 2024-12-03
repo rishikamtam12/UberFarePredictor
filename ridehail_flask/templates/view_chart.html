@@ -4,20 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Chart</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
         .chart-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allows wrapping for responsiveness */
+            gap: 20px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%; /* Adjusted size for better fit */
         }
         .chart-container img {
-            margin: 0 10px;
             max-width: 100%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .description {
             text-align: center;
-            margin-top: 10px;
+            color: #6c757d;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        .btn-primary {
+            display: block;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -25,7 +60,7 @@
     <div class="container">
         <h1>Chart View</h1>
         
-        <!-- Render charts side by side if there are multiple, otherwise single chart -->
+        <!-- Render charts side by side or stacked based on responsiveness -->
         <div class="chart-container">
             {% for chart_image in chart_images %}
                 <img src="{{ url_for('static', filename=chart_image) }}" alt="Chart Image">
@@ -37,8 +72,11 @@
             <p>{{ chart_description }}</p>
         </div>
 
-        <br><br>
-        <button onclick="location.href='/static-visualizations'">Back to Static Visualizations</button>
+        <!-- Back to Static Visualizations button -->
+        <button class="btn btn-primary" onclick="location.href='/static-visualizations'">Back to Static Visualizations</button>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
