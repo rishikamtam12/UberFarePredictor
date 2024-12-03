@@ -4,16 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static Visualizations</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for extra styling -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem; /* Reduced font size */
+            margin-bottom: 30px;
+        }
+        .container {
+            text-align: center;
+        }
+        .btn {
+            font-size: 1rem; /* Reduced font size */
+            padding: 10px 20px; /* Reduced padding */
+            margin: 8px 0;
+            width: 100%;
+            max-width: 300px; /* Reduced max width */
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.03);
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #495057;
+            transform: scale(1.03);
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.85rem; /* Slightly smaller font size */
+            color: #6c757d;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
     <h1>Static Visualizations</h1>
-    <button onclick="location.href='/view-sample-data'">View Sample Data</button><br><br>
-    <button onclick="location.href='/comparision'">Comparision</button><br>
-    <button onclick="location.href='/view-chart/1'">View Chart 1</button><br>
-    <button onclick="location.href='/view-chart/2'">View Chart 2</button><br>
-    <button onclick="location.href='/view-chart/3'">View Chart 3</button><br>
-    <button onclick="location.href='/view-chart/4'">View Chart 4</button><br>
-    <button onclick="location.href='/view-chart/5'">View Chart 5</button><br>
-    <button onclick="location.href='/view-chart/6'">View Chart 6</button>
+    <!-- Navigation buttons -->
+    <div>
+        <button onclick="location.href='/view-sample-data'" class="btn btn-primary">View Sample Data</button><br>
+        <button onclick="location.href='/comparision'" class="btn btn-primary">Comparision Data</button><br>
+        <button onclick="location.href='/view-chart/1'" class="btn btn-primary">Fare Price Distribution</button><br>
+        <button onclick="location.href='/view-chart/2'" class="btn btn-primary">Distance vs Price</button><br>
+        <button onclick="location.href='/view-chart/3'" class="btn btn-primary">Heatmaps [Weather Metrics vs Price]</button><br>
+        <button onclick="location.href='/view-chart/4'" class="btn btn-primary">Rain's Influence on Price</button><br>
+        <button onclick="location.href='/view-chart/5'" class="btn btn-primary">Hourly Pricing</button><br>
+        <button onclick="location.href='/view-chart/6'" class="btn btn-primary">Hourly Pricing by Place</button><br>
+        <!-- Go Back button -->
+        <button onclick="location.href='/'" class="btn btn-secondary">Go Back to Main Page</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+    <p>&copy; 2024 Visualization Dashboard | All Rights Reserved</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -4,33 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparison Data</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .table-responsive {
+            max-width: 80%; /* Adjusted size to make the table smaller */
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
         .table {
             width: 100%;
-            margin-top: 20px;
             border-collapse: collapse;
         }
         .table th, .table td {
-            padding: 8px;
-            text-align: left;
+            padding: 10px;
+            text-align: center;
             border: 1px solid #ddd;
         }
         .table th {
-            background-color: #f2f2f2;
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .btn-primary {
+            display: block;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Comparison Data</h1>
-        
+
         <!-- Display the comparison table -->
-        <div>
+        <div class="table-responsive">
             {{ comparision_table|safe }}
         </div>
 
-        <br><br>
-        <button onclick="location.href='/static-visualizations'">Back to Static Visualizations</button>
+        <!-- Back to Static Visualizations button -->
+        <button class="btn btn-primary" onclick="location.href='/static-visualizations'">Back to Static Visualizations</button>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

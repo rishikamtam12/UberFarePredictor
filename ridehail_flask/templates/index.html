@@ -3,11 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Main Page - Visualization Dashboard</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for extra styling -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        .container {
+            text-align: center;
+        }
+        .btn {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            margin: 10px;
+            width: 250px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #495057;
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
     <h1>Welcome to the Visualization Dashboard</h1>
-    <button onclick="location.href='/static-visualizations'">Static Visualizations</button>
-    <button onclick="location.href='/dynamic-visualizations'">Dynamic Visualizations</button>
+    <!-- Navigation buttons -->
+    <div class="btn-group">
+        <button onclick="location.href='/static-visualizations'" class="btn btn-primary">Static Visualizations</button>
+        <button onclick="location.href='/dynamic-visualizations'" class="btn btn-secondary">Dynamic Visualizations</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+    <p>&copy; 2024 Visualization Dashboard | All Rights Reserved</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

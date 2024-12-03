@@ -60,7 +60,7 @@ def view_chart(chart_number):
     chart_info = {
         '1': {
             'images': ['uber_fare_price_distribution.png', 'lyft_fare_price_distribution.png'],
-            'description': 'Visualization 1 - Fare price distribution (histogram and bar plot)'
+            'description': 'Visualization 1 - Fare price distribution'
         },
         '2': {
             'images': ['uber_lyft_distance_price_distribution.png'],
@@ -145,7 +145,9 @@ def dynamic_visualization():
         dest_result = client.query(query).result()
         source_to_dest[source] = [row.destination for row in dest_result]
 
-    # If the form is submitted, fetch the average price per hour for the selected source and destination
+    # Initialize variables for source and destination
+    source = None
+    destination = None
     uber_avg_price_per_hour = None
     lyft_avg_price_per_hour = None
     df_html = None  # To store the HTML table
@@ -224,8 +226,7 @@ def dynamic_visualization():
                            uber_avg_price_per_hour=uber_avg_price_per_hour,
                            df_html=df_html, 
                            selected_source=source,
-                           selected_destination=destination)
-    
+                           selected_destination=destination)    
     
 if __name__ == "__main__":
     app.run(debug=True)
